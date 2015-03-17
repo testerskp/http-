@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.security.PrivateKey;
 import java.util.List;
 import java.util.Map;
@@ -62,27 +64,19 @@ public class HttpRequest {
 	        return result;
 	    }    
 
-	 public static void main(String[] args){
-		 String[] content = {"%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b61",
-				 			 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b62",
-				 			 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b63",
-				 			 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b64",
-				 			 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b65",
-				 			 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b66",
-		 					 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b67",
-		 					 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b68",
-		 					 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b69",
-		 					 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b610",
-		 					 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b611",
-		 					 "%e6%b5%8b%e8%af%95%e5%bc%b9%e5%b9%95%e6%9c%8d%e5%8a%a1%e7%ab%af1%e5%88%86%e9%92%9f%e9%99%90%e5%88%b612",
+	 public static void main(String[] args) throws UnsupportedEncodingException{
+		 String[] content = {"1234567912",
+				 			 "≤‚ ‘233333",				 	
 		 						};
-		 String key = "album_id=167016&seq=2&color=16724530&start_time=80&emoji_type=0&content=";
-		 for(int i=0;i<content.length;i++){;
-		 	String sr=HttpRequest.sendPost("http://192.168.90.43/danmaku/commit.php?client_id=duhongbo=", key + content[i]);
+//		 String[] content = {"%e9%80%97%e9%80%bc%e5%92%a8%e8%af%a2%e7%83%ad%e7%ba%bf%e8%80%81%e5%ad%90%e6%95%99%e4%bd%a0%e6%b3%a1%e5%a6%9e"};
+		 String key = "album_id=167017&seq=2&color=16724530&start_time=80&emoji_type=0&content=";
+		 for(int i=0;i<content.length;i++){
+			String enconde = URLEncoder.encode(content[i],"UTF-8"); 
+		 	String sr=HttpRequest.sendPost("http://192.168.90.43/danmaku/commit.php?client_id=mazhi123=", key + enconde);
 		 	System.out.println(sr);
-		 	System.out.println(content[i]);
+		 	System.out.println(enconde);
 		 	try {
-				Thread.sleep(1000);
+				Thread.sleep(7000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
