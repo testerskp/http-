@@ -66,13 +66,16 @@ public class HttpRequest {
 
 	 public static void main(String[] args) throws UnsupportedEncodingException{
 		 String[] content = {"1234567912",
-				 			 "测试233333",				 	
+				 			 "测试233333",
+				 			 "美女联系我 1523531",
+				 			 "微信LH72233",
+				 			 "qq223456"
 		 						};
 //		 String[] content = {"%e9%80%97%e9%80%bc%e5%92%a8%e8%af%a2%e7%83%ad%e7%ba%bf%e8%80%81%e5%ad%90%e6%95%99%e4%bd%a0%e6%b3%a1%e5%a6%9e"};
 		 String key = "album_id=167017&seq=2&color=16724530&start_time=80&emoji_type=0&content=";
 		 for(int i=0;i<content.length;i++){
 			String enconde = URLEncoder.encode(content[i],"UTF-8"); 
-		 	String sr=HttpRequest.sendPost("http://192.168.90.43/danmaku/commit.php?client_id=mazhi123=", key + enconde);
+		 	String sr=HttpRequest.sendPost("http://danmaku.shouji.baofeng.com/danmaku/commit.php?client_id=mazhi123=", key + enconde);
 		 	System.out.println(sr);
 		 	System.out.println(enconde);
 		 	try {

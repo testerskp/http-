@@ -65,7 +65,7 @@ public class HttpPostHour {
 	 public static void main(String[] args){
 		 String content = "24%e5%b0%8f%e6%97%b6%e9%99%90%e5%88%b6";
 		 String key = "album_id=218895&seq=3&color=16724530&start_time=80&emoji_type=0&content=";
-		 for(int i=1;i<110;i++){;
+		 for(int i=1;i<110;i++){
 		 	String sr=HttpRequest.sendPost("http://192.168.90.43/danmaku/commit.php?client_id=minghui=", 
 		 									key + content + i);
 		 	System.out.println(sr);

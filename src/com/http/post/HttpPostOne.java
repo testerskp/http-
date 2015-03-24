@@ -76,7 +76,7 @@ public class HttpPostOne {
 		 String encode = URLEncoder.encode(content,"utf-8");
 		 System.out.println(encode);
 		 String key = "album_id=167016&seq=5&color=16724530&start_time=58.667&emoji_type=0&content=";
-		 String sr=HttpRequest.sendPost("http://192.168.90.43/danmaku/commit.php?client_id=minghui=", key + encode );
+		 String sr=HttpPostOne.sendPost("http://192.168.90.43/danmaku/commit.php?client_id=minghui=", key + encode );
 		 	System.out.println(sr);
 	 }
 }

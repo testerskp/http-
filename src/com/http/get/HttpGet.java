@@ -61,15 +61,15 @@ public class HttpGet {
 	}
 	
 	public static void main(String[] args){
-		// TODO Auto-generated method stub
-	String s = HttpGet.sendGet("http://192.168.90.43/search_keyword.php", "platf=android&limit=30");
-//	System.out.println(s);
-	try {
-		HttpGet.jsonArr(HttpGet.jsonOb(s, "result"), "default");
-	} catch (JSONException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+			// TODO Auto-generated method stub
+		String s = HttpGet.sendGet("http://192.168.90.43/search_keyword.php", "platf=android&limit=30");
+		//	System.out.println(s);
+		try {
+			HttpGet.jsonArr(HttpGet.jsonOb(s, "result"), "default");
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }
